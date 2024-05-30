@@ -1,0 +1,87 @@
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.menu-row {
+    position: relative;
+    background-color: rgb(71, 71, 71);
+    padding: 25px 15px;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;   
+}
+.menu-btn {
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(20, 26, 33);
+    border: none;
+    padding: 6px 8px;
+    border-radius: 4px;
+    z-index: 150;
+    transition: all 0.3s ease;
+}
+
+.menu-list{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 75px;
+    width: auto;
+    z-index: 149;
+    background-color: rgb(71, 71, 71);
+    padding: 10px 25px;
+    animation: slideIn 0.5s ease-in-out;
+    transition: all 0.3s ease;
+}
+.menu-list li {
+    list-style: none;
+    line-height: 40px;
+}
+.menu-list a{
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    transition: all 0.15s ease-in-out;
+}
+.menu-row:hover,
+.menu-row:focus-within {
+    padding: 25px 15px;
+}
+.menu-btn:hover,
+.menu-list a:hover {
+    transform: scale(1.1);
+}
+.menu-list li:hover{    
+    color: red;
+}
+@media only screen and (max-width: 767px){
+    .menu-row{
+        display: flex;
+        margin-top: 130px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .menu-row{
+        display: flex;
+        margin-top: 100px;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .menu-row{
+        display: none;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .menu-row{
+        display: none;
+    }
+}

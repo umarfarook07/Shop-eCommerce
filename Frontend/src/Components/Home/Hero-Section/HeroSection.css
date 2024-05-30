@@ -1,0 +1,90 @@
+.hero-section {
+  padding: 20px;
+  margin: 20px; 
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.collection-grid div {
+  transition: transform 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.collection-grid div:hover {
+  transform: scale(1.05);
+}
+
+.collection-grid img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.collection-grid div:hover img {
+  transform: scale(1.1);
+}
+
+.collection-grid span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.collection-grid span:hover {
+  color: red;
+}
+
+@media only screen and (max-width: 767px) {
+  .hero-section {
+    margin: 20px 0; 
+  }
+  .collection-grid div{
+    height: 150px;
+  }
+  .collection-grid span {
+    font-size: 0.8rem;
+  }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .hero-section {
+    padding: 20px;
+    margin: 20px 0;
+  }
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .hero-section {
+    padding: auto 120px;
+    margin-top: 60px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .hero-section{
+    display: flex;
+    justify-content: center;
+  }
+  .collection-grid {
+    display: flex;
+    
+  }
+}

@@ -1,0 +1,172 @@
+:root {
+    --main-bg-color: black;
+    --main-text-color: white;
+    --accent-color: red;
+    --font-small: 12px;
+    --font-medium: 14px;
+    --font-large: 16px;
+    --font-xlarge: 24px;
+    --input-border: 1px solid var(--accent-color);
+}
+
+.form-container {
+    background-color: var(--main-bg-color);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+    margin-top: 140px;
+    margin-bottom: 20px;
+}
+
+.form-header h1 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-size: var(--font-xlarge);
+    text-align: center;
+}
+
+.form-header p {
+    color: var(--main-text-color);
+    font-size: var(--font-large);
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.data-input label {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--main-text-color);
+}
+
+.data-input input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: var(--input-border);   
+    border-radius: 4px;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    outline: none;
+}
+
+.data-input input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: var(--font-medium);
+}
+
+.description a {
+    color: var(--accent-color);
+}
+
+.form-footer {
+    margin-top: 30px;
+}
+
+.form-footer button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 10px 0;
+    background-color: var(--accent-color);
+    color: var(--main-text-color);
+    border: none;
+    border-radius: 4px;
+    font-size: var(--font-large);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-footer button:hover {
+    background-color: var(--main-text-color);
+    color: var(--accent-color);
+}
+
+.error-message {
+    color: #ff3860;
+    font-size: var(--font-medium);
+    margin-top: 5px;
+}
+
+.sucuess-msg{
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    padding: 25px;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    align-items: center;
+    justify-items: center;
+    margin: 10px;
+}
+
+@media only screen and (min-width: 280px) {
+    .form-container {
+        width: 70%;
+        margin-top: 0 !important;
+    }
+
+    .form-header h1 {
+        font-size: var(--font-large);
+    }
+
+    .form-header p,
+    .data-input label,
+    .description,
+    .form-footer button,
+    .error-message {
+        font-size: var(--font-small);
+    }
+
+    .form-footer {
+        margin-top: 12px;
+    }
+
+    .form-footer button {
+        margin-top: 8px;
+        padding: 8px 0;
+    }
+
+    .error-message {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .form-header h1 {
+        font-size: 18px;
+        margin-top: 0;
+    }
+
+    .form-header p,
+    .data-input label,
+    .description,
+    .form-footer button {
+        font-size: var(--font-medium);
+    }
+
+    .form-footer {
+        margin-top: 16px;
+    }
+
+    .form-footer button {
+        margin-top: 10px;
+        padding: 12px 0;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .form-container {
+         margin-top: 140px !important;
+    }
+}
