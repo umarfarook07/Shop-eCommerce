@@ -1,7 +1,7 @@
 :root {
-    --main-bg-color: black;
-    --main-text-color: white;
-    --accent-color: red;
+    --main-bg-color: white;
+    --main-text-color: black;
+    --accent-color: black;
     --font-small: 12px;
     --font-medium: 14px;
     --font-large: 16px;
@@ -53,7 +53,7 @@
 }
 
 .data-input input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(70, 60, 60, 0.5);
 }
 
 .description {
@@ -76,8 +76,8 @@
     width: 100%;
     margin-top: 18px;
     padding: 10px 0;
-    background-color: var(--accent-color);
-    color: var(--main-text-color);
+    background-color: black;
+    color: white;
     border: none;
     border-radius: 4px;
     font-size: var(--font-large);
@@ -86,8 +86,14 @@
 }
 
 .form-footer button:hover {
-    background-color: var(--main-text-color);
-    color: var(--accent-color);
+    background-color:rgb(142, 138, 138);
+    color: White;
+}
+
+.link-span a{
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
 }
 
 .error-message {

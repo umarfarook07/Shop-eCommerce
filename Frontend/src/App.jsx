@@ -6,6 +6,7 @@ import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import Menu from "./Components/Home/Menu/Menu";
 import Footer from './Components/Footer/Footer';
+import UserProfile from './Components/Registration/UserProfile';
 import Login from './Components/Registration/Login';
 import Signup from './Components/Registration/Signup';
 import ForgotPassword from './Components/Registration/ForgotPassword';
@@ -25,6 +26,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/user-profile" element={<UserProfile />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/collections" element={<Collections />} />

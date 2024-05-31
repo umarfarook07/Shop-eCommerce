@@ -7,8 +7,9 @@ const jwt = require('jsonwebtoken');
 const generateToken = require('./utils/jwt');
 const User = require('./models/User');
 const {signUpSchema, loginSchema} = require('./schemas/userSchema');
+const productSchema = require('./Schemas/productSchema');
+const Product = require('./models/Product');
 const app = express();
-
 const cors = require('cors');
 
 // Middleware to parse JSON bodies
@@ -100,6 +101,31 @@ app.post('/login', async (req, res) => {
     }
 });
 
+app.post('/addProducts', async (req, res) =>{
+    try {
+        const { productImage,productName, productDescription, productPrice } = productSchema.parse(req.body);
+        
+        const product = new Product({
+            productImage,
+            productName,
+            productDescription,
+            productPrice
+        });
+        // Save user to database
+        await product.save();
+
+        res.status(201).send({
+            message: `New Product Added Sucuessfully`
+        });
+
+    } catch (error) {
+        if (error instanceof z.ZodError) {
+            return res.status(400).send(error.errors);
+        }
+        console.error(error);
+        res.status(500).send('Server error');
+    }
+});
 
 // Start the server
 app.listen(3000, () => {

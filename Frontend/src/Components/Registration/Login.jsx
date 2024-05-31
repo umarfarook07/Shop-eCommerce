@@ -80,23 +80,14 @@ function Login() {
                 required
               />
             </label>
-
-            <label>
-              <input
-                type="checkbox"
-                checked={keepLoggedIn}
-                onChange={(e) => setKeepLoggedIn(e.target.checked)}
-              />
-              Keep me logged in
-            </label>
           </div>
           <div className="description">
             <Link to="/forgot-password">Forgot Password?</Link>
           </div>
           <div className="form-footer">
-            <span>
-              Don't Have An Account? <Link to="/signup">SignUp</Link> Here
-            </span>
+            <p>
+              Don't Have An Account? <span className="link-span"><Link to="/signup"> SignUp </Link></span>Here
+            </p>
             <button type="submit" disabled={loading}>
               {loading ? "Logging in..." : "Login"}
             </button>

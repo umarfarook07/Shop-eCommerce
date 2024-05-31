@@ -51,7 +51,11 @@ function Signup() {
       {isSignedup ? (
         <SuccessMessage data={responseData} /> // Pass the response data as a prop
       ) : (
-        <form id="signupForm" className="form-container" onSubmit={handleSignup}>
+        <form
+          id="signupForm"
+          className="form-container"
+          onSubmit={handleSignup}
+        >
           <div className="form-header">
             <h1>Signup</h1>
             <p>Enter your details to create an account</p>
@@ -98,9 +102,12 @@ function Signup() {
             </label>
           </div>
           <div className="form-footer">
-            <span>
-              Already have an account? <Link to="/login">Login</Link>
-            </span>
+            <p>
+              Already have an account?
+              <span className="link-span">
+                <Link to="/login"> Login </Link>
+              </span>
+            </p>
             <button type="submit">Signup</button>
           </div>
         </form>

@@ -37,7 +37,7 @@ function Header() {
         </div>
 
         <div className="user-btn">
-          <Link to="/login">
+          <Link to="/user-profile">
             <button>
               <i className="bx bxs-user"></i>
             </button>

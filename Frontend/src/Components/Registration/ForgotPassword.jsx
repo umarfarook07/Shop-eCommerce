@@ -31,7 +31,7 @@ function ForgotPassword() {
                     </label>
                 </div>
                 <div className="form-footer">
-                    <span>Remember your password?<Link to="/login"> Login </Link>here</span>
+                    <p>Remember your password?<span className='link-span'><Link to="/login"> Login </Link></span>here</p>
                     <button type="submit">Reset Password</button>
                 </div>
             </form>

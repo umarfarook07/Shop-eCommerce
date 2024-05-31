@@ -1,0 +1,35 @@
+.warning-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+.warning-container button {
+    padding: 10px;
+    background: none;
+    border: none;
+    margin: 10px;
+}
+.warning-container a {
+    font-weight: bold;
+    color: red;
+    text-decoration: none !important;
+    font-size: large;
+
+}
+
+@media only screen and (min-width: 280px) {
+    .warning-container{
+        margin: 150px 0px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media only screen and (min-width: 992px) {
+    .warning-container{
+        margin: 250px 0px;
+    }
+}

@@ -31,8 +31,9 @@ header nav button {
 
 .nav-bar button {
   width:50px;
-  background-color: transparent;
+  background: none;
   border: none;
+  color: black;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 .nav-bar button i {
