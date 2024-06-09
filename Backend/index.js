@@ -1,7 +1,7 @@
 // server.js
 const express = require('express');
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const z = require('zod');
 const jwt = require('jsonwebtoken');
 const generateToken = require('./utils/jwt');
