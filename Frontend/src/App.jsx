@@ -13,9 +13,6 @@ import ForgotPassword from './Components/Registration/ForgotPassword';
 import Cart from './Components/Cart/Cart';
 import Collections from './Components/Collections/Collections';
 import AddProductForm from './Components/Collections/AddProductForm';
-import MensCollections from './Components/Collections/MensCollection';
-import WomensCollection from './Components/Collections/WomensCollection';
-import { BabyCollection } from "./Components/Collections/BabyCollection";
 
 function App() {
   return (
