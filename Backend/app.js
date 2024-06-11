@@ -11,6 +11,10 @@ const productSchema = require('./Schemas/productSchema');
 const Product = require('./models/Product');
 const app = express();
 const cors = require('cors');
+require('dotenv').config();
+
+
+const PORT = process.env.PORT || 8000;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -20,8 +24,8 @@ app.use(cors());
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb+srv://umarkhaji456:umaryas123@cluster0.mv6byn5.mongodb.net/Capital-Shop');
-  console.log('Connected to MongoDB');
+    await mongoose.connect(process.env.MONGO_URL);
+    console.log('Connected to MongoDB');
 }
 
 // Route handling
@@ -140,6 +144,6 @@ app.get('/Collections', async (req, res) => {
 
 
 // Start the server
-app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000/');
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}/`);
 });
