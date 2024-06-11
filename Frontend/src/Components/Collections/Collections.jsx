@@ -1,35 +1,54 @@
-import React from 'react';
-import DataCollection from './data/data';
+import React, { useEffect, useState } from 'react';
 import './styles.css';
-const Item = ({product}) => {
+import axios from 'axios';
+
+const Collections = (props) => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/Collections`);
+        setData(response.data);
+      } catch (error) {
+        console.error('Error Fetching Data', error);
+      }
+    };
+    fetchProducts();
+  }, [props.gender]); 
+
+
+  const filteredCollection = data.filter( collectionItem => collectionItem.gender === 'Unisex' || collectionItem.gender === props.gender)
+
+  return (
+    <div className='collection-page'>
+      <div className='products-grid'>
+        <ul>
+          {filteredCollection.map(collectionItem => (
+            <li key={collectionItem._id}>
+              <Item product={collectionItem} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+const Item = ({ product }) => {
   return (
     <div className='product-container'>
       <div>
-      <img className='product-image' src = {product.image} alt="image loading" />
+        <img className='product-image' src={product.image} alt='image loading' />
       </div>
-      <div className="product-details">
-        <h2 className='product-title'>{product.name}</h2> 
-        <spam className= 'product-price'>${product.price}</spam>
+      <div className='product-details'>
+        <h2 className='product-title'>{product.name}</h2>
+        <span className='product-price'>${product.price}</span>
         <p className='product-description'>{product.description}</p>
         <p className='product-category'> {product.category}</p>
       </div>
     </div>
   );
-}
-
-const Collections = () => {
-  return (
-    <div className='collection-page'>
-      <h1>Shop By Category</h1>
-      <div className='products-grid'>
-      <ul>
-        {DataCollection.map(collectionItem => (
-          <li key={collectionItem.name}><Item product = {collectionItem}/></li>
-        ))}
-      </ul>
-      </div>
-    </div>
-  );
-}
+};
 
 export default Collections;

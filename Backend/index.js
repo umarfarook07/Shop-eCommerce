@@ -127,6 +127,18 @@ app.post('/addProducts', async (req, res) =>{
     }
 });
 
+app.get('/Collections', async (req, res) => {
+    try {
+        const products = await Product.find();
+        res.json(products);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+    
+})
+
+
 // Start the server
 app.listen(3000, () => {
     console.log('Server is running on http://localhost:3000/');

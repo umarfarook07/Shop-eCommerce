@@ -13,8 +13,8 @@ import ForgotPassword from './Components/Registration/ForgotPassword';
 import Cart from './Components/Cart/Cart';
 import Collections from './Components/Collections/Collections';
 import AddProductForm from './Components/Collections/AddProductForm';
-import MensCollection from './Components/Collections/MensCollection';
-import { WomensCollection } from "./Components/Collections/WomensCollection";
+import MensCollections from './Components/Collections/MensCollection';
+import WomensCollection from './Components/Collections/WomensCollection';
 import { BabyCollection } from "./Components/Collections/BabyCollection";
 
 function App() {
@@ -29,9 +29,8 @@ function App() {
         <Route path="/user-profile" element={<UserProfile />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/collections" element={<Collections />} />
-        <Route path="/MensCollection" element={<Collections />} />
-        <Route path="/WomensCollection" element={<Collections />} />
+        <Route path="/MensCollection" element={<Collections gender="men"/>} />
+        <Route path="/WomensCollection" element={<Collections gender="women"/>} />
         <Route path="/BabyCollection" element={<Collections />} />
         <Route path="*" element={<Home />} />
         <Route path="/cart" element={<Cart />} />

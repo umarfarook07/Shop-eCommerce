@@ -1,44 +1,55 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import './styles.css';
+import axios from 'axios';
 
-export const Item = ({ category, SrcImg }) => {
-  return (
-    <div>
-      <div className='category-item'>Category: {category}</div>
-      <img src={SrcImg} alt={category} />
-    </div>
-  );
-};
-
-function MensCollection() {
-  const [products, setProducts] = useState([]);
+const MensCollections = () => {
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/products');
-        if (!response.ok) throw new Error('Data could not be fetched!');
-        const data = await response.json();
-        setProducts(data);
+        const response = await axios.get('http://localhost:3000/mensCollections');
+        setData(response.data);
       } catch (error) {
-        console.error("Error fetching data: ", error);
+        console.error('Error Fetching Data', error);
       }
     };
-
     fetchProducts();
   }, []);
 
+  const mensCollection = data.filter(
+    collectionItem => collectionItem.gender === 'Male' || collectionItem.gender === 'Unisex'
+  );
+
   return (
-    <div>
-      <h2>Shop By Category</h2>
-      <ul className='category-list'>
-        {products.map(product => (
-          <li key={product.id}>
-            <Item category={product.category} SrcImg={product.img} />
-          </li>
-        ))}
-      </ul>
+    <div className='collection-page'>
+      <div className='products-grid'>
+        <ul>
+          {mensCollection.map(collectionItem => (
+            <li key={collectionItem.name}>
+              <Item product={collectionItem} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
-}
+};
 
-export default MensCollection;
+const Item = ({ product }) => {
+  return (
+    <div className='product-container'>
+      <div>
+        <img className='product-image' src={product.image} alt='image loading' />
+      </div>
+      <div className='product-details'>
+        <h2 className='product-title'>{product.name}</h2>
+        <span className='product-price'>${product.price}</span>
+        <p className='product-description'>{product.description}</p>
+        <p className='product-category'> {product.category}</p>
+      </div>
+    </div>
+  );
+};
+
+export default MensCollections;
