@@ -42,7 +42,8 @@ function Login() {
       }
     } catch (err) {
       console.error("Error during the login process:", err);
-      setMessage("An error occurred. Please try again.");
+      
+      setMessage('Invalid creditionals');
     } finally {
       setLoading(false);
     }

@@ -105,15 +105,17 @@ app.post('/login', async (req, res) => {
     }
 });
 
-app.post('/addProducts', async (req, res) =>{
+app.post('/addproducts', async (req, res) =>{
     try {
-        const { productImage,productName, productDescription, productPrice } = productSchema.parse(req.body);
+        const { name,price, description, category, imageURL, gender } = productSchema.parse(req.body);
         
         const product = new Product({
-            productImage,
-            productName,
-            productDescription,
-            productPrice
+            name,
+            price,
+            description,
+            category,
+            imageURL,
+            gender
         });
         // Save user to database
         await product.save();

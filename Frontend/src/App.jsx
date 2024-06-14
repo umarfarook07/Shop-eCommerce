@@ -10,7 +10,7 @@ import UserProfile from './Components/Registration/UserProfile';
 import Login from './Components/Registration/Login';
 import Signup from './Components/Registration/Signup';
 import ForgotPassword from './Components/Registration/ForgotPassword';
-import Cart from './Components/Cart/Cart';
+// import Cart from './Components/Cart/Cart';
 import Collections from './Components/Collections/Collections';
 import AddProductForm from './Components/Collections/AddProductForm';
 
@@ -25,12 +25,12 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/user-profile" element={<UserProfile />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />
-        <Route path="/cart" element={<Cart />} />
+        {/* <Route path="/cart" element={<Cart />} /> */}
         <Route path="/MensCollection" element={<Collections gender="men"/>} />
         <Route path="/WomensCollection" element={<Collections gender="women"/>} />
         <Route path="/BabyCollection" element={<Collections />} />
         <Route path="*" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<AddProductForm />} />
       </Routes>
       <Footer />
     </BrowserRouter>
