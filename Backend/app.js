@@ -107,7 +107,7 @@ app.post('/login', async (req, res) => {
 
 app.post('/addproduct', async (req, res) =>{
     try {
-        const { name,price, description, category, imageURL, gender } = productSchema.parse(req.body);
+        const { name,price, description, category, imageURL, gender } = req.body;
         
         const product = new Product({
             name,
