@@ -18,7 +18,7 @@ function Header() {
   return (
     <header>
       <div className="product-logo">
-        <Link to="/Capital-Shop/">
+        <Link to="/">
           <img className="logo-img" src={LogoImage} alt="Logo" />
         </Link>
       </div>

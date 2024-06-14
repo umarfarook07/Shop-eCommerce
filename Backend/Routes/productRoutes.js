@@ -41,5 +41,17 @@ router.get('/collections', async (req, res) => {
         res.status(500).send('Server error');
     }
 });
-
+router.get('/productinfo/:id', async (req, res) => {
+    const pId = req.params.id;
+    try {
+      const product = await Product.findById(pId);
+      if (!product) {
+        return res.status(404).json({ msg: 'Product not found' });
+      }
+      res.json(product);
+    } catch (error) {
+      console.error(error.message);
+      res.status(500).send('Server error');
+    }
+  });
 module.exports = router;

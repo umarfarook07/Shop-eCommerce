@@ -13,6 +13,7 @@ import ForgotPassword from './Components/Registration/ForgotPassword';
 // import Cart from './Components/Cart/Cart';
 import Collections from './Components/Collections/Collections';
 import AddProductForm from './Components/Collections/AddProductForm';
+import ProductInfo from "./Components/Collections/ProductInfo";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/BabyCollection" element={<Collections />} />
         <Route path="*" element={<Home />} />
         <Route path="/cart" element={<AddProductForm />} />
+        <Route path="/ProductInfo/:id" element={<ProductInfo />}/>
       </Routes>
       <Footer />
     </BrowserRouter>
