@@ -7,7 +7,7 @@ const Collections = (props) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`https://shop-ecommerce-3ryq.onrender.com/Collections`);
+        const response = await axios.get(`https://shop-ecommerce-3ryq.onrender.com/product/Collections`);
         setData(response.data);
       } catch (error) {
         console.error('Error Fetching Data', error);

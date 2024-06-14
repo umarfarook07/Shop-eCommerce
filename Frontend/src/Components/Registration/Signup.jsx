@@ -20,7 +20,7 @@ function Signup() {
       return;
     }
     try {
-      const response = await fetch("https://shop-ecommerce-3ryq.onrender.com/signup", {
+      const response = await fetch("https://shop-ecommerce-3ryq.onrender.com/user/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

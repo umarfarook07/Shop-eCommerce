@@ -29,7 +29,7 @@ function AddProductForm() {
     };
 
     try {
-      const response = await axios.post('https://shop-ecommerce-3ryq.onrender.com/addproduct', product);
+      const response = await axios.post('https://shop-ecommerce-3ryq.onrender.com/product/addproduct', product);
       console.log(response.data);
       setSuccess('Product added successfully!');
       setName('');
@@ -55,6 +55,7 @@ function AddProductForm() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Product name"
+          required
         />
       </div>
       <div className='input-div'>
@@ -64,6 +65,8 @@ function AddProductForm() {
           value={imageURL}
           onChange={(e) => setImageURL(e.target.value)}
           placeholder="Image URL"
+          required
+
         />
       </div>
       <div className='input-div'>
@@ -73,6 +76,8 @@ function AddProductForm() {
           value={price}
           onChange={(e) => setPrice(e.target.value)}
           placeholder="Price"
+          required
+
         />
       </div>
       <div className='input-div'>
@@ -82,6 +87,8 @@ function AddProductForm() {
           type="text"
           onChange={(e) => setDescription(e.target.value)}
           placeholder='Description'
+          required
+
         />
       </div>
       <div className='input-div'>
@@ -91,6 +98,8 @@ function AddProductForm() {
           type="text"
           onChange={(e) => setCategory(e.target.value)}
           placeholder='Category'
+          required
+
         />
       </div>
       <div className='input-div'>
@@ -104,6 +113,8 @@ function AddProductForm() {
               name="gender"
               checked={gender === 'mens'}
               onChange={(e) => setGender(e.target.value)}
+              required
+
             />
           </label>
           <label>
@@ -114,6 +125,8 @@ function AddProductForm() {
               name="gender"
               checked={gender === 'womens'}
               onChange={(e) => setGender(e.target.value)}
+              required
+
             />
           </label>
           <label>
@@ -124,6 +137,8 @@ function AddProductForm() {
               name="gender"
               checked={gender === 'unisex'}
               onChange={(e) => setGender(e.target.value)}
+              required
+
             />
           </label>
         </div>

@@ -17,7 +17,7 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await fetch("https://shop-ecommerce-3ryq.onrender.com/login", {
+      const response = await fetch("https://shop-ecommerce-3ryq.onrender.com/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
