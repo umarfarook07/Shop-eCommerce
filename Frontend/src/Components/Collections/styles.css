@@ -150,6 +150,15 @@
 .btn-div .cart-btn{
   background-color:rgb(250, 107, 63);
 }  */
+
+.product-info-page{
+  display: flex;
+  flex-direction: column;
+  padding: 80px;
+  justify-content: center;
+  /* align-items: center; */
+}
+
 @media only screen and (max-width: 767px){
   
 }
