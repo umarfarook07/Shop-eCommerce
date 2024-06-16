@@ -1,7 +1,13 @@
 .product-info-page {
   padding: 50px;
+  padding-top: 0;
 }
-
+.return-link{
+  color: red;
+  font-size: 16px;
+  padding: 5px ;
+  text-decoration: none !important;
+}
 .product-info {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -23,6 +29,10 @@
   font-size: 28px;
   margin-bottom: 6px;
 }
+.p-rating{
+  margin-bottom: 8px;
+  color: darkgreen;
+}
 .p-category {
   color: gray;
   font-size: 22px;
@@ -34,11 +44,14 @@
   color: red;
   font-size: 22px;
 }
-.p-colors {
+.p-color{
   display: flex;
+}
+.p-colors {
   height: 40px;
   width: 40px;
-  background-color: black;
+  margin: 10px;
+  margin-left: 0;
   border-radius: 50%;
   margin-bottom: 16px;
   cursor: pointer;
@@ -48,17 +61,31 @@
   opacity: 0.5;
 }
 .size-options {
-  height: 30px;
-  width: 30px;
-  border: 1px solid black;
+  
   margin-bottom: 16px;
+  display: flex;
+}
+.size-option{
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  margin: 2px;
+  display: flex;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 .p-price {
   color: black;
   font-size: 22px;
   margin-bottom: 16px;
 }
-
+.p-stock{
+  color: red;
+  size: 16px;
+  margin-bottom: 8px;
+}
 .add-to-cart-btn {
   background-color: black;
   color: white;
@@ -79,8 +106,36 @@
 
 .p-description {
   font-size: 18px;
+  margin-bottom: 12px;
+  margin-top: 20px;
+}
+.reviews h1{
+  border-top: 2px solid black;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  color: red;
+}
+.reviews-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 20px;
+}
+.review {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+}
+.reviewer-name{
+  color: orange;
+  margin-bottom: 4px;
 }
 
+.review-text{
+  color: red;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.review-rating{
+}
 @media only screen and (max-width: 767px) {
   .product-info {
     grid-template-columns: 1fr;
@@ -103,9 +158,9 @@
     height: 25px;
     width: 25px;
   }
-  .size-options {
-    height: 20px;
-    width: 20px;
+  .size-option {
+    height: 30px;
+    width: 30px;
   }
   .p-price {
     font-size: 16px;
