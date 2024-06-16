@@ -27,6 +27,8 @@ app.get('/', (req, res) => {
 app.use('/user', userRoutes);
 app.use('/product', productRoutes);
 
+
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}/`);
 });

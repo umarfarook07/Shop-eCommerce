@@ -54,4 +54,22 @@ router.get('/productinfo/:id', async (req, res) => {
       res.status(500).send('Server error');
     }
   });
+
+router.post('/products', async(req,res) => {
+    const products = req.body;
+    try {
+        
+        await Product.insertMany(products);
+
+    res.status(201).json({
+        msg: "products added sucuessfully"
+    })
+    } catch (error) {
+        res.status(400).json({
+            msg: "error",
+            error
+        })
+    }
+    
+})
 module.exports = router;

@@ -27,8 +27,8 @@ function App() {
         <Route path="/user-profile" element={<UserProfile />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />
         {/* <Route path="/cart" element={<Cart />} /> */}
-        <Route path="/MensCollection" element={<Collections gender="men"/>} />
-        <Route path="/WomensCollection" element={<Collections gender="women"/>} />
+        <Route path="/MensCollection" element={<Collections gender="Men"/>} />
+        <Route path="/WomensCollection" element={<Collections gender="Women"/>} />
         <Route path="/BabyCollection" element={<Collections />} />
         <Route path="*" element={<Home />} />
         <Route path="/cart" element={<AddProductForm />} />

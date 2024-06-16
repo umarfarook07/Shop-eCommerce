@@ -21,12 +21,13 @@ const Collections = (props) => {
 
   const filteredCollection = data.filter(
     (collectionItem) =>
-      collectionItem.gender === "Unisex" ||
-      collectionItem.gender === props.gender
+      (collectionItem.gender === "Unisex" ||
+      collectionItem.gender === props.gender) && collectionItem.category === "Clothing"
   );
 
   return (
     <div className="collection-page">
+      <h1 className="product-category-heading">Clothing</h1>
       <div className="products-grid">
         <ul>
           {filteredCollection.map((collectionItem) => (
